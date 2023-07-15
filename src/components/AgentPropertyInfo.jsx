@@ -17,6 +17,7 @@ import ReactPaginate from 'react-paginate';
 import Footer from "../components/Footer";
 import ScheduleCard from "./ScheduleCard";
 import PostStatus from "./PostStatus";
+import Review from "./Review";
 
 const items = [
     <Facility key="1" img={img5} alt={"property facility"} name="Torrey Pines Elementary School" rating="A+" score="9/10" gradeRange="K to 5th" access="Public" driveTime="5 min drive" />,
@@ -194,9 +195,7 @@ function AgentPropertyInfo() {
                                     </div>
                                 </div>
 
-                                <div>
-
-                                </div>
+                                <Review  />
 
                                 {/* <div className="grid grid-cols-3 gap-5 text-left py-6 border-b border-gray-300">
                                     <PostStatus name="Big House" price="#1200000" img={img3} city="Abuja" type="Duplex" access="Estate" traffic="8/10" status="Pending" />
