@@ -8,6 +8,7 @@ import homeImage3 from "../assets/images/0961546823-544968651-original (1).jpg";
 import homeImage4 from "../assets/images/0961546823-544968651-original (1).jpg";
 import Footer from "../components/Footer";
 import { BsFillCaretDownFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 
 
@@ -57,11 +58,11 @@ function Home() {
             </div>
             <div className="custom-copy">
               <div className="custom-text">
-                <span>Redfin Premier agents have years of experience buying and selling high-end homes. Get the highest level of service from our best agents.</span>
+                <span>Coetus One agents have years of experience buying and selling high-end homes. Get the highest level of service from our best agents.</span>
               </div>
             </div>
             <div className="custom-cta">
-              <a href="/premier" className="custom-button" tabindex="0" role="button">
+              <a href="#" className="custom-button" tabindex="0" role="button">
                 <span>Learn more</span>
               </a>
             </div>
@@ -101,7 +102,7 @@ function Home() {
             </div>
             <div className="custom-copy">
               <div className="custom-text">
-                <span>For seven years running, independent research has proven that homes listed with Redfin sell for more than comparable homes listed with other brokerages. Get started with a free consultation.</span>
+                <span>For seven years running, independent research has proven that homes listed with Coetus One sell for more than comparable homes listed with other brokerages. Get started with a free consultation.</span>
               </div>
             </div>
             <div className="custom-search">
@@ -127,7 +128,7 @@ function Home() {
             </div>
             <div className="custom-search">
               <input type="text" class="search-input-box" placeholder="City, Address, School, Building, ZIP" title="Enter your street address" />
-              <button className="search-button-input2"><IoSearch /></button>
+              <Link to="/properties-page"><button className="search-button-input2 custom-button"><IoSearch /></button></Link>
             </div>
           </div>
         </div>
