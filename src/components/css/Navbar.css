@@ -16,8 +16,8 @@
 
 .navbar.fixed {
   position: fixed;
-  top: 0;
-  left: 0;
+  /* top: 0; */
+  /* left: 0; */
   width: 100%;
   background-color: white;
   color: black;
@@ -26,7 +26,7 @@
 .colorReg{
   color: orangered;
 }
-.navbar.fixed .colorReg {
+/* .navbar.fixed .colorReg {
   color: orangered;
   margin-left: -20px;
 }
@@ -42,13 +42,7 @@
   margin-left: 10px;
   color: black;
   font-size: 22px;
-}
-
-.navbar.fixed .dots{
-  color: black;
-  margin-left: 40px;
-  margin-top: 0px;
-}
+} */
 
 #navbar ul {
   color: black;

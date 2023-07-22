@@ -63,7 +63,7 @@ function Home() {
             </div>
             <div className="custom-cta">
               <a href="#" className="custom-button" tabindex="0" role="button">
-                <span>Learn more</span>
+                <Link to="/properties-page"><span>Featured Houses</span></Link>
               </a>
             </div>
           </div>
@@ -106,8 +106,8 @@ function Home() {
               </div>
             </div>
             <div className="custom-search">
-              <input type="text" class="search-input-box" placeholder="Enter your street address" title="Enter your street address" />
-              <button className="search-button-input">Next</button>
+              <input type="text" className="search-input-box" placeholder="Enter your street address" title="Enter your street address" />
+              <span className="custom-button ml-5">Next</span>
             </div>
           </div>
         </div>
@@ -126,9 +126,9 @@ function Home() {
                 <span>Whether you’re searching for houses, apartments, or condos, it's easy to find a place you'll love.</span>
               </div>
             </div>
-            <div className="custom-search">
-              <input type="text" class="search-input-box" placeholder="City, Address, School, Building, ZIP" title="Enter your street address" />
-              <Link to="/properties-page"><button className="search-button-input2 custom-button"><IoSearch /></button></Link>
+            <div className="custom-search flex justify-center gap-5 group">
+              <input type="text" className="search-input-box" placeholder="City, Address, School, Building, ZIP" title="Enter your street address" />
+              <Link to="/properties-page" className="custom-button w-28"><IoSearch className="my-auto mx-auto group-hover:scale-125"/></Link>
             </div>
           </div>
         </div>

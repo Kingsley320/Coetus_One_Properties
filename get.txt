@@ -1,0 +1,11 @@
+1. Create Property - Fix form to contain necessary info for API and create POST Request to create propert
+_ Suleiman.
+
+2. Get Properties - Fix code and Create code to get all properties on system.
+_Bivan.
+
+3.Code to get all users on system.
+_Emmanuel.
+
+4. Code to view all appointment bookings
+_Kingsley.
