@@ -58,10 +58,14 @@ const Navbar = () => {
                     <Link to="/">
                         <li ><img src={logo1} alt="logo" className="h-16 " /></li>
                     </Link>
-                    
+
                     <li onClick={handleOpenModal2} className="text-orange-500 font-bold hover:text-white">Register </li>
 
-                    <li onClick={handleOpenModal3} className="text-orange-500 font-bold hover:text-white"> Sign In </li>
+                    <li onClick={handleOpenModal3} className="text-orange-500 font-bold hover:text-white">
+                        {
+                            sessionStorage.getItem("user-name") ? <p> Welcome, {sessionStorage.getItem("user-name")} </p> : <p>Sign In</p>
+                        }
+                    </li>
                     <li><BsList onClick={toggleDropdown} className="text-3xl my-auto border-black border-2 rounded-full hover:text-white hover:border-white" /></li>
                 </ul>
             </nav>

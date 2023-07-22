@@ -10,6 +10,7 @@ import img5 from "../assets/images/1961546823-544968651-original.jpg";
 import img6 from "../assets/images/image (7).jpg";
 import "./css/UserPropertyPage.css";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 
 
@@ -46,7 +47,8 @@ function PropertyPageUser() {
               <IoArrowBackCircle className="property-cards-arrows text-black active:text-orange-600" />
             </div>
             <div className="property-wrapper" ref={(el) => (scrollContainerRefs.current[0] = el)}>
-              <UserPropertyCard views={33} image={img1} price={"729,000"} area={2026} street={"Ozone Park NY 11417  Ozone Park"} city={"New York"} />
+              <Link to="/single-property">
+              <UserPropertyCard views={33} image={img1} price={"729,000"} area={2026} street={"Ozone Park NY 11417  Ozone Park"} city={"New York"} /></Link>
               <UserPropertyCard views={71} image={img2} price={"286,500"} area={3100} street={"170-25 118th Rd, Jamaica, NY 11434"} city={"New York"} />
               <UserPropertyCard views={27} image={img3} price={"888,000"} area={2473} street={"52-7 74th St Elmhurst, NY 11373"} city={"New York"} />
               <UserPropertyCard views={33} image={img4} price={"770,000"} area={4037} street={"106-20 70th Ave Unit 2-B Forest Hills, NY 11375"} city={"New York"} />

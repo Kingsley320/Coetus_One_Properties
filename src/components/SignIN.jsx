@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import "./css/SignIN.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 const Modal3 = ({ isOpen, onClose }) => {
     if (!isOpen) {
         return null;
@@ -14,6 +15,7 @@ const Modal3 = ({ isOpen, onClose }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [err, setErr] = useState(false);
+    const [logindicate, setLogIndicate] = useState(0);
     const baseURL = "http://property.reworkstaging.name.ng/v1/auth/login";
 
 
@@ -23,17 +25,25 @@ const Modal3 = ({ isOpen, onClose }) => {
             setErr(true);
 
         }
-        const user = {
-            email: email,
-            password: password
-        }
-        console.log(user);
-
-        try {
-            const userLogin = await axios.post(baseURL);
-            console.log(userLogin);
-        } catch (err) {
-            console.log(err);
+        else{
+            const user = {
+                email: email,
+                password: password
+            }
+            console.log(user);
+            try {
+                const userLogin = await axios.post(baseURL, user);
+                console.log(userLogin);
+                sessionStorage.setItem("user-token", userLogin.data.data.token)
+                sessionStorage.setItem("user-id", userLogin.data.data.id)
+                sessionStorage.setItem("user-name", userLogin.data.data.full_name)
+                setLogIndicate(1);
+                setTimeout(() => {
+                    onClose()
+                }, 2000);
+            } catch (err) {
+                console.log(err);
+            }
         }
 
     }
@@ -41,6 +51,11 @@ const Modal3 = ({ isOpen, onClose }) => {
     return (
         <div className="modal">
             <div className="modal-content">
+                <div>
+                    {
+                        logindicate === 1 ? <div className="bg-green-600 text-center h-10 rounded-md"> <p className="text-white font-bold h-full">Sucessful</p> </div> : null
+                    }
+                </div>
                 <div className="d-flex">
                     <h2>User Sign into Your Account</h2>
                     <span className="close" onClick={onClose}>&times;</span>

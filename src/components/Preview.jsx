@@ -19,7 +19,10 @@ const Preview = ({ isOpen }) => {
     return (
         <div className="preview">
             <div className="dropdown-content3">
+                <div className="flex">
                 <img src={logo} alt="" />
+                <b className="mx-8">{sessionStorage.getItem("user-name")}</b>
+                </div>
                 <hr className="size-hr" />
                 <ul>
                     <li><MdOutlineFavoriteBorder className="icons-" />Favorites</li>
