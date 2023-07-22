@@ -62,9 +62,7 @@ function Home() {
               </div>
             </div>
             <div className="custom-cta">
-              <a href="#" className="custom-button" tabindex="0" role="button">
                 <Link to="/properties-page"><span>Featured Houses</span></Link>
-              </a>
             </div>
           </div>
         </div>
