@@ -25,18 +25,18 @@ const Modal3 = ({ isOpen, onClose }) => {
             setErr(true);
 
         }
-        else{
+        else {
             const user = {
                 email: email,
                 password: password
             }
-            console.log(user);
+            // console.log(user);
             try {
                 const userLogin = await axios.post(baseURL, user);
-                console.log(userLogin);
+                // console.log(userLogin);
                 sessionStorage.setItem("user-token", userLogin.data.data.token)
                 sessionStorage.setItem("user-id", userLogin.data.data.id)
-                sessionStorage.setItem("user-name", userLogin.data.data.full_name)
+                sessionStorage.setItem("user-name", userLogin.data.data.first_name + " " + userLogin.data.data.last_name)
                 setLogIndicate(1);
                 setTimeout(() => {
                     onClose()

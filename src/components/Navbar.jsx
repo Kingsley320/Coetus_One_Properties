@@ -61,10 +61,15 @@ const Navbar = () => {
 
                     <li onClick={handleOpenModal2} className="text-orange-500 font-bold hover:text-white">Register </li>
 
-                    <li onClick={handleOpenModal3} className="text-orange-500 font-bold hover:text-white">
-                        {
-                            sessionStorage.getItem("user-name") ? <p> Welcome, {sessionStorage.getItem("user-name")} </p> : <p>Sign In</p>
-                        }
+                    {
+                        sessionStorage.getItem("user-name") ?
+                            <li className="disabled text-orange-500 font-bold hover:text-white"> Welcome, {sessionStorage.getItem("user-name")} </li> :
+                            <li onClick={handleOpenModal3} className="text-orange-500 font-bold hover:text-white">
+                                Sign In
+                            </li>
+                    }
+                    <li onClick={handleOpenModal3} className="text-orange-500 font-bold hover:text-white active:text-white">
+
                     </li>
                     <li><BsList onClick={toggleDropdown} className="text-3xl my-auto border-black border-2 rounded-full hover:text-white hover:border-white" /></li>
                 </ul>
