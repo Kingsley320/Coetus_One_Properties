@@ -18,9 +18,6 @@ const Modal2 = ({ isOpen, onClose }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [err, setErr] = useState(false);
-    const [show, setShow] = useState(false);
-    const ip = "http://159.65.21.42:9000";
-    const url = `${ip}/register`;
     const navigate = useNavigate();
     const [logindicate, setLogIndicate] = useState(0);
 
@@ -56,13 +53,10 @@ const Modal2 = ({ isOpen, onClose }) => {
         try {
             const resp = await axios.post(`${baseURL}/users`, user);
             // console.log(resp);
-            setShow(true);
             setLogIndicate(1);
-            setTimeout(() => {
-                setShow(false);
-            }, 2500);
 
         } catch (err) {
+            setLogIndicate(2);
             console.log(err);
         }
     }
@@ -72,7 +66,10 @@ const Modal2 = ({ isOpen, onClose }) => {
             <div className="modal-content">
                 <div>
                     {
-                        logindicate === 1 ? <div className="bg-green-600 text-center h-10 rounded-md"> <p className="text-white font-bold h-full">Sucessful</p> </div> : null
+                        logindicate === 1 ?  <div className='text-white rounded-lg bg-red-600 h-10 pt-2'>Successful</div> : null
+                    }
+                    {
+                        logindicate === 2 ?  <div className='text-white rounded-lg bg-red-600 h-10 pt-2'>Unathourized</div> : null
                     }
                 </div>
                 <div className=" flex justify-center align-middle">
