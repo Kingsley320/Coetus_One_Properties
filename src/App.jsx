@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, useParams} from 'react-router-dom';
 import SingleProperty from './pages/SingleProperty';
 import Home from './pages/Home';
 import AgentPropertyPage from './pages/AgentPropertyPage';
@@ -20,8 +20,8 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/single-property" element={<SingleProperty />}/>
         <Route path="/properties-page" element={<PropertyPageUser />}/>
-        <Route path="/view-wishlist" element={<UserWishlist />}/>
-        
+        <Route path="/view-wishlist/:id" element={<UserWishlist />}/>
+        {/* <Route path="/agent-appointments" element={<ViewAppointmentPage />}/> */}
 
         <Route path="/agent-single-property" element={<AgentSingleProperty />}/>
         <Route path="/agent-properties" element={<AgentPropertyPage />}/>
