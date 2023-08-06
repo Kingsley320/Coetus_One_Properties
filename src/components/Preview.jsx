@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/Preview.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { TbJewishStar } from "react-icons/tb";
 import { LuView } from "react-icons/lu";
@@ -11,15 +11,18 @@ import { BsHouseUp } from "react-icons/bs";
 import { BsCalendar4Week } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import logo from "../assets/images/Group 7.png";
+import UserWishlist from "../pages/UserWishlist";
 const Preview = ({ isOpen }) => {
     if (!isOpen) {
         return null;
     }
-
+const navigate = useNavigate();
     const handleLogout = () => {
         sessionStorage.removeItem("user-name");
         sessionStorage.removeItem("user-id");
         sessionStorage.removeItem("user-token");
+        navigate('/');
+        
     }
 
     return (
@@ -31,7 +34,7 @@ const Preview = ({ isOpen }) => {
                 </div>
                 <hr className="size-hr" />
                 <ul>
-                    <Link to="/view-wishlist"><li>
+                    <Link to={`/view-wishlist/:${sessionStorage.getItem("user-id")}`}  element={<UserWishlist/>}><li>
                         <TbJewishStar className="icons-" />
                         Wishlist
                     </li></Link>
